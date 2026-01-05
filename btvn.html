@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Viết CSS ở đây */
+        body {
+            background: hsla(9, 100%, 64%, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .header {
+            background: rgba(255, 0, 0, 0.6);
+            padding: 30px;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .name {
+            font-size: 24px;
+            color: rgba(255, 0, 0, 0.8);
+            margin: 0 0 5px 0;
+        }
+
+        .title {
+            color: rgba(255, 0, 0, 0.6);
+            margin: 0 0 15px 0;
+        }
+
+        .description {
+            color: rgba(255, 0, 0, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Thêm style cho skills và button */
+        .skills {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .skills li {
+            background: rgba(255, 0, 0, 0.2);
+            color: rgba(255, 0, 0, 0.8);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .btn {
+            background: rgba(255, 0, 0, 0.2);
+            color: rgba(255, 0, 0, 0.8);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Viết HTML ở đây -->
+    <div class="card">
+        <div class="header">
+            <img class="avatar" src="https://scr.vn/wp-content/uploads/2020/08/Nh%C3%B3c-Maruko-d%E1%BB%85-th%C6%B0%C6%A1ng-1024x1024.jpeg" alt = "thuhang">
+        </div>
+        <div class="content">
+            <h2 class="name">Vu Thu Hang</h2>
+            <p class="title"><strong>Student</strong></p>
+            <p class="description">
+                Đam mê lập trình và thiết kế web.
+                Luôn học hỏi công nghệ mới.
+            </p>
+            <ul class="skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>C/C++</li>
+            </ul>
+            <a href="cmnm.html"><button class="btn">Liên hệ</button></a>
+        </div>
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
